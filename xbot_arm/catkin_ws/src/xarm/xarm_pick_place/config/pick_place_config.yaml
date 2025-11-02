@@ -1,0 +1,32 @@
+base_link: 'base_link'
+
+# =====================================================
+xarm: # group name
+  object_name : 'water_bottle'  # 被抓取物体的名字
+  object_type : 'CYLINDER'      # 被抓取物体的形状：CYLINDER or BOX
+  object_size : [0.2, 0.008]   # 被抓取物体的尺寸：CYLINDER [ height,radius];BOX[length, width , hright ]
+ 
+  gripper_state: 0   # 0代表手爪水平抓取东西，1代表手爪竖直抓取。
+
+  #default pickup params
+  gripper_joints : ['gripper_1_joint', 'gripper_2_joint']  # 手爪
+  pregrasp_posture : [0.6, 0.6]   # 张开手爪时的角度
+  grasp_posture : [0.0, 0.0]      # 抓取(闭合）手爪时的角度
+
+  # 注意：目前只支持竖直方向的靠近和撤退!
+  pre_grasp_approach : [1, 0.16]  # 第一个数，0代表水平靠近，1代表竖直靠近；第二数代表距离，单位米
+  post_grasp_retreat : [1, 0.06]  # 第一个数，0代表水平撤退，1代表竖直撤退；第二数代表距离，单位米
+
+  #default place params
+  place_pose : [0.2, -0.4, 0 ]    # 目前放置点坐标也采用service输入，所以此参数无效
+  pre_place_approach : [1, 0.06]  # 第一个数，0代表水平靠近，1代表竖直靠近；第二数代表距离，单位米
+  post_place_retreat : [1, 0.17]  # 第一个数，0代表水平撤退，1代表竖直撤退；第二数代表距离，单位米
+  
+
+
+
+  
+  
+  
+  
+

@@ -1,0 +1,36 @@
+xarm_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints:
+    - arm_1_joint
+    - arm_2_joint
+    - arm_3_joint
+    - arm_4_joint
+    - arm_5_joint
+    - arm_6_joint
+  constraints:
+    goal_time: 0.6
+    # vel_tolerance is 0 for due to the movegroup/follow_joint_trajectory/goal tolerance is empty
+    stopped_velocity_tolerance: 0
+    arm_1_joint: {trajectory: 0.1, goal: 0.1}
+    arm_2_joint: {trajectory: 0.1, goal: 0.1}
+    arm_3_joint: {trajectory: 0.1, goal: 0.1}
+    arm_4_joint: {trajectory: 0.1, goal: 0.1}
+    arm_5_joint: {trajectory: 0.1, goal: 0.1}
+    arm_6_joint: {trajectory: 0.1, goal: 0.1}
+  gains:
+    arm_1_joint:   {p: 1000, i: 0.0, d: 0.1, i_clamp: 0.0}
+    arm_2_joint:   {p: 1000, i: 0.0, d: 0.1, i_clamp: 0.0}
+    arm_3_joint:   {p: 1000, i: 0.0, d: 0.1, i_clamp: 0.0}
+    arm_4_joint:   {p: 1000, i: 0.0, d: 0.1, i_clamp: 0.0}
+    arm_5_joint:   {p: 1000, i: 0.0, d: 0.1, i_clamp: 0.0}
+    arm_6_joint:   {p: 1000, i: 0.0, d: 0.1, i_clamp: 0.0}
+  stop_trajectory_duration: 0.5
+  state_publish_rate:  25
+  action_monitor_rate: 10
+
+gripper_controller:
+  type: "position_controllers/JointTrajectoryController"
+  joints:
+    - gripper_1_joint
+  gains:
+    gripper_1_joint:  {p: 20, i: 0.1, d: 0, i_clamp: 0.2}

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>xarm_teleop</name>
+  <version>1.0.0</version>
+  <description>
+    Provides teleoperation using keyboard for xbot arm.
+  </description>
+  <license>BSD</license>
+  <author email="wangxiaoyun@iscas.ac.cn">Xiaoyun Wang</author>
+  <author email="wangpeng@droid.ac.cn">Xiaoyun Wang</author>
+  <maintainer email="wangpeng@droid.ac.cn">Roc Wang</maintainer>
+  <maintainer email="wangxiaoyun@iscas.ac.cn">Xiaoyun Wang</maintainer>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>open_manipulator_msgs</depend>
+</package>

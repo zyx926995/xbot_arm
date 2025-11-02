@@ -1,0 +1,2 @@
+set(xarm_pick_place_MESSAGE_FILES "")
+set(xarm_pick_place_SERVICE_FILES "/home/xbot/catkin_ws/src/xarm/xarm_pick_place/srv/AddObject.srv;/home/xbot/catkin_ws/src/xarm/xarm_pick_place/srv/TargetPickPose.srv;/home/xbot/catkin_ws/src/xarm/xarm_pick_place/srv/TargetPlacePose.srv;/home/xbot/catkin_ws/src/xarm/xarm_pick_place/srv/RemoveObjects.srv;/home/xbot/catkin_ws/src/xarm/xarm_pick_place/srv/ArmControl.srv")

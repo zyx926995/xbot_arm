@@ -1,0 +1,121 @@
+#ifndef PICK_PLACE_DEMO_H_
+#define PICK_PLACE_DEMO_H_
+#include <ros/ros.h>
+#include <xarm_driver/CommandPose.h>
+#include <iostream>
+#include <geometry_msgs/PointStamped.h>
+#include <std_msgs/Bool.h>
+#include <moveit/move_group_interface/move_group_interface.h>
+#include <vector>
+#include <geometry_msgs/PointStamped.h>
+#include <moveit_msgs/AttachedCollisionObject.h>
+#include <moveit_msgs/CollisionObject.h>
+#include <geometry_msgs/Pose.h>
+#include <moveit_visual_tools/moveit_visual_tools.h> // simple tool for showing grasps
+#include <moveit/planning_scene_interface/planning_scene_interface.h>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
+#include "xarm_pick_place/TargetPickPose.h"
+#include "xarm_pick_place/TargetPlacePose.h"
+
+const static double PAI = 3.1415926;
+const static std::string ARM_PLANNING_GROUP = "xarm";
+const static std::string GRIPPER_PLANNING_GROUP = "gripper";
+const static std::string BASE_LINK = "base_link";
+static const std::vector<double> TARGET_ARM_JOINT_POSITIONS = {0.9, -0.208508687927, 0.193944850917, 1.72721782516, 2.48678521346, -0.388948172222};
+static const std::vector<double> OPEN_GRIPPER_POSE = {0.65,0.65};
+static const std::vector<double> CLOSE_GRIPPER_POSE = {0.05,0.05};
+static const std::vector<double> HOME_POSITION = {0, 0, 0, 0, 0, 0};
+static const std::vector<double> INIT_PICK_PLACE_JOINTS = {-0.84, -0.66, 0, -1.57, 0, -0.86};
+
+static const double OBJECT_HEIGHT = 0.08;
+static const double OBJECT_WIDTH  = 0.01;
+static const double OBJECT_LENGTH  = 0.01;
+static const std::vector<double> OBJECT_POSE = {0.15,0.35,0.08};
+static const std::vector<double> PLACE_JOINT_POSITIONS ={-1.51480976759, -1.03185291482, -0.0710701490616, -1.45846900153, 0.054608905524, -0.679993637799};
+namespace xarm {
+
+class PickPlaceApi
+{
+public:
+  PickPlaceApi(ros::NodeHandle nh, moveit::planning_interface::PlanningSceneInterface& planning_interface);
+
+  /** @brief 加载机械臂抓取和放置配置的相关参数
+   *  @return true if load params succeeds
+   */
+  bool loadArmConfigData(std::string config_group);
+
+
+  bool pickPlaceCall(xarm_pick_place::TargetPickPose::Request &req,xarm_pick_place::TargetPickPose::Response &res);
+  bool placeCall(xarm_pick_place::TargetPlacePose::Request &req,xarm_pick_place::TargetPlacePose::Response &res);
+
+  /** @brief 添加桌面约束
+   */
+  void addDeskFloor();
+  /** @brief 添加目标物体
+   */
+  void setTargetObject();
+
+  /** @brief 张开手爪
+   *  @param gripper_group:手爪的movegroup
+   *  @return true if success
+   */
+  bool openGripper( moveit::planning_interface::MoveGroupInterface & gripper_group);
+
+  /** @brief 闭合手爪
+   *  @param gripper_group:手爪的movegroup
+   *  @return true if success
+   */
+  bool closeGripper( moveit::planning_interface::MoveGroupInterface & gripper_group);
+
+  /** @brief 到达指定的joint位置
+   *  @param arm_group:手臂的movegroup
+   *  @param pose: 目标关节位置
+   *  @return true if success
+   */
+  bool reachJointTarget(moveit::planning_interface::MoveGroupInterface & arm_group,std::vector<double> pose);
+
+  bool reachPoseTarget(moveit::planning_interface::MoveGroupInterface& arm_group,std::vector<double> pose);
+
+
+  /** @brief 笛卡尔坐标系内上下移动某段距离
+   *  @param arm_group:手臂的movegroup
+   *  @param distance: 移动的距离，带正负
+   *  @return true if success
+   */
+  bool moveCartesianPathUpDown(double distance,moveit::planning_interface::MoveGroupInterface& arm_group);
+
+  /** @brief 上下移动某段距离
+   *  @param arm_group:手臂的movegroup
+   *  @param distance: 移动的距离，带正负
+   *  @return true if success
+   */
+  bool moveUpDown(double distance,moveit::planning_interface::MoveGroupInterface& arm_group);
+
+
+private:
+  moveit::planning_interface::PlanningSceneInterface planning_scene_interface_;
+  std::vector<moveit_msgs::CollisionObject> collision_objects_;
+  ros::NodeHandle nh_;
+  ros::ServiceServer pick_pose_srv;
+  ros::ServiceServer place_pose_srv;
+  std::vector<double> pick_target_pose_,place_target_pose_;
+  ros::Publisher grip_pub_;
+
+
+  std::vector<std::string> object_ids_;
+
+  std::string base_link_;
+  int gripper_state_;
+  std::string object_name_,object_type_;
+  std::vector<double> object_size_,object_pose_;
+  double object_grasp_height_;
+  std::vector<std::string> gripper_joints_;
+  std::vector<double> pre_grasp_posture_,grasp_posture_;
+  std::vector<double> pre_grasp_approach_,post_grasp_retreat_;
+  std::vector<double> place_pose_,pre_place_approach_,post_place_retreat_;
+
+};
+
+}
+
+#endif

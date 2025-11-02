@@ -1,0 +1,8 @@
+prefix=/home/xbot/catkin_ws/install
+
+Name: xarm_teleop
+Description: Description of xarm_teleop
+Version: 1.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp std_msgs sensor_msgs

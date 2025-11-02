@@ -1,0 +1,4 @@
+float32[6] joints_values
+---
+bool success
+

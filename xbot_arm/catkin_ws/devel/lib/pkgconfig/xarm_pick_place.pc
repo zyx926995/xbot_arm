@@ -1,0 +1,8 @@
+prefix=/home/xbot/catkin_ws/devel
+
+Name: xarm_pick_place
+Description: Description of xarm_pick_place
+Version: 1.0.0
+Cflags: -I/home/xbot/catkin_ws/devel/include -I/home/xbot/catkin_ws/src/xarm/xarm_pick_place/include
+Libs: -L${prefix}/lib 
+Requires: 

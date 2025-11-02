@@ -1,0 +1,49 @@
+base_link: 'base_link'
+
+# =====================================================
+xarm: # group name
+  # 被抓取物体的形状：CYLINDER or BOX
+  object_name : 'water_bottle'
+  object_type : 'CYLINDER'
+  object_size : [0.2, 0.015]   # CYLINDER [ height,radius];BOX[length, width , hright ]
+  object_pose : [0.2, 0.4, 0.0]
+  object_grasp_height : 0.12
+ 
+  #default pickup params
+  gripper_joints : ['gripper_1_joint', 'gripper_2_joint']
+  pregrasp_posture : [0.6, 0.6]
+  grasp_posture : [0.1, 0.1]
+  pre_grasp_approach : [0, 0, -1]
+  post_grasp_retreat : [0, 0, 1, 0.05]
+
+  #default place params
+  place_pose : [-0.2, 0.4, 0 ]
+  post_place_retreat : [0, 0, 1]
+  
+  #设置真机控制相关
+  use_real_robot : 1
+  pre_pick_angle : -4
+  pre_place_angle : -3
+
+
+  # 0.3 0.4
+  #pre_pick_joints : [-0.44584, -1.42622, 1.75928, 0.887779, 1.33852, -0.0571995]
+  #pre_place_joints : [0.463464, 1.21498, 1.06589, 1.35168, -1.07739, -0.377266]
+
+
+  # 0.2 0.4
+  pre_pick_joints : [-0.400838, -1.45111, 1.6269, 1.26689, 1.4389, -0.0208635]
+  pre_place_joints : [0.638477, 1.05519, 0.641069, 1.44224, -0.731063, -0.680207]
+
+  #0.25 0.35
+  #pre_pick_joints : [-0.179403, -1.50473, -1.61751, -1.36505, -1.62597, 0.0535529]
+  #pre_place_joints : [0.614836, 1.01471, 0.696164, 1.43779, -0.72595, -0.615475]
+
+
+
+
+  
+  
+  
+  
+

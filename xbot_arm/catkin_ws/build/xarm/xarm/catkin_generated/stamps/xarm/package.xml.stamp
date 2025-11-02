@@ -1,0 +1,28 @@
+<package>
+    <name>xarm</name>
+    <version>1.0.0</version>
+    <description>
+        --------------------------------------------------------------------------
+        A group of ROS packages for xarm user using.
+        The matapackage includes driver,description , pickup and place, moveit comfig and tutorials package,
+        for learning and searching robot technology aside with ROS_Academy_for_beginners.
+        --------------------------------------------------------------------------
+    </description>
+    <maintainer email="wangpeng@droid.ac.cn">Rocwang</maintainer>
+    <maintainer email="wangxiaoyun@iscas.ac.cn">Rocwang</maintainer>
+
+    <author>Xiaoyun Wang</author>
+    <license>BSD</license>
+    <url>http://www.droid.ac.cn</url>
+
+    <buildtool_depend>catkin</buildtool_depend>
+    <run_depend>xarm_description</run_depend>
+    <run_depend>xarm_driver</run_depend>
+    <run_depend>xarm_moveit_config</run_depend>
+    <run_depend>xarm_pick_place</run_depend>
+    <run_depend>xarm_teleop</run_depend>
+    <run_depend>xarm_tutorials</run_depend>
+    <export>
+        <metapackage/>
+    </export>
+</package>

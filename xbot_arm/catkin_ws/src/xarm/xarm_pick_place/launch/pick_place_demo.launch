@@ -1,0 +1,7 @@
+<launch>
+  <!-- Start the test -->
+  <node name="server_pick_place" pkg="xarm_pick_place" type="server_pick_place" output="screen">
+    <rosparam command="load" file="$(find xarm_pick_place)/config/pick_place_config.yaml"/>
+  </node>
+
+</launch>

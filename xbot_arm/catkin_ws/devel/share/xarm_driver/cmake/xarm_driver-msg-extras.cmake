@@ -1,0 +1,2 @@
+set(xarm_driver_MESSAGE_FILES "/home/xbot/catkin_ws/src/xarm/xarm_driver/msg/MotorStatus.msg;/home/xbot/catkin_ws/src/xarm/xarm_driver/msg/SingleJointControl.msg;/home/xbot/catkin_ws/src/xarm/xarm_driver/msg/JointLocation.msg")
+set(xarm_driver_SERVICE_FILES "/home/xbot/catkin_ws/src/xarm/xarm_driver/srv/CommandPose.srv;/home/xbot/catkin_ws/src/xarm/xarm_driver/srv/CommandJoint.srv;/home/xbot/catkin_ws/src/xarm/xarm_driver/srv/CallVersion.srv")

@@ -1,0 +1,4 @@
+moveit_msgs/CollisionObject collision_object
+---
+bool success
+

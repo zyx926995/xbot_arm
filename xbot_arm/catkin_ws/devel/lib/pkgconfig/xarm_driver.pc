@@ -1,0 +1,8 @@
+prefix=/home/xbot/catkin_ws/devel
+
+Name: xarm_driver
+Description: Description of xarm_driver
+Version: 1.0.0
+Cflags: -I/home/xbot/catkin_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: ecl_build ecl_devices ecl_geometry ecl_time roscpp rospy std_msgs
