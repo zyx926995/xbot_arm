@@ -1,0 +1,39 @@
+<mujoco model="xbot_arm">
+  <!-- 包含基本场景 -->
+  <include file="scene.xml" />
+  
+  <!-- 包含机器人配置 -->
+  <include file="xbot_arm/xbot_arm_options.xml" />
+  <include file="xbot_arm/xbot_arm_dependencies.xml" />
+  
+  <!-- 世界体 -->
+  <worldbody>
+    <!-- 机械臂 -->
+    <body name="arm_pose">
+      <include file="xbot_arm/xbot_arm.xml" />
+    </body>
+    
+    <!-- 桌子 -->
+    <body name="table-a" pos="0 0 0.09">
+      <geom name="table_legs_1" type="box" size="0.02 0.3 0.3" pos="0.3 0.3 -0.3" condim="4" solref="0.02 1" solimp="0.9 0.95 0.001"/>
+      <geom name="table_legs_2" type="box" size="0.02 0.3 0.3" pos="-0.3 0.3 -0.3" condim="4" solref="0.02 1" solimp="0.9 0.95 0.001"/>
+      <geom name="table_legs_3" type="box" size="0.02 0.3 0.3" pos="0.3 -0.3 -0.3" condim="4" solref="0.02 1" solimp="0.9 0.95 0.001"/>
+      <geom name="table_legs_4" type="box" size="0.02 0.3 0.3" pos="-0.3 -0.3 -0.3" condim="4" solref="0.02 1" solimp="0.9 0.95 0.001"/>
+      <geom name="table_top" type="box" size="0.3 0.3 0.02" condim="4" solref="0.02 1" solimp="0.9 0.95 0.001"/>
+    </body>
+  </worldbody>
+  
+  <!-- 包含执行器和传感器 -->
+  <actuator>
+    <include file="xbot_arm/xbot_arm_control.xml" />
+  </actuator>
+
+  <sensor>
+    <include file="xbot_arm/xbot_arm_sensor.xml" />
+  </sensor>
+  
+  <!-- 初始关节位置 -->
+  <keyframe>
+    <key name="home" qpos="0 -1.18 0.000 -2.18 0.000 3.316 0.000 0.000" qvel="0 0 0 0 0 0 0 0"/>
+  </keyframe>
+</mujoco>

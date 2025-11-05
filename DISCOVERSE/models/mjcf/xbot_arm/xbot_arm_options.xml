@@ -1,0 +1,46 @@
+<mujocoinclude>
+  <!-- 材质定义 -->
+  <asset>
+    <material name="LightGrey" rgba="0.7 0.7 0.7 1" specular="0.3" shininess="0.1" />
+    <material name="LightGreen" rgba="0.5 0.8 0.5 1" specular="0.3" shininess="0.1" />
+    <material name="White" rgba="0.9 0.9 0.9 1" specular="0.4" shininess="0.1" />
+  </asset>
+  
+  <!-- 渲染选项 -->
+  <!-- <visual><headlight ambient="0.8 0.8 0.8" diffuse="0.9 0.9 0.9" specular="0.1 0.1 0.1" dir="0 0 -1" /></visual> -->
+  
+  <!-- 仿真选项 -->
+  <option timestep="0.002" /> <!-- 时间步长 2ms -->
+  <option gravity="0 0 -9.81" /> <!-- 重力设置 -->
+  <!-- <option collision="all" /> 碰撞检测设置 -->
+  
+  <!-- 求解器选项 -->
+  <option iterations="50" tolerance="1e-10" /> <!-- 增加迭代次数提高精度 -->
+  
+  <!-- 默认参数 -->
+  <default>
+    <!-- 默认几何参数 -->
+    <default class="obj_visual">
+      <geom contype="0" conaffinity="0" group="0" />
+    </default>
+    
+    <!-- 默认关节参数 -->
+    <default class="joint">
+      <joint armature="0.01" damping="1.0" frictionloss="0.01" limited="true" />
+    </default>
+    
+    <!-- 默认碰撞参数 -->
+    <default class="geom">
+      <geom friction="0.9 0.01 0.001" solimp="0.9 0.95 0.001" solref="0.02 1" />
+    </default>
+  </default>
+
+    <!-- 添加tendon来实现夹爪关节同步 -->
+  <tendon>
+    <fixed name='gripper_gear'>
+      <joint joint="gripper_1_joint" coef='-12.5' />
+      <joint joint="gripper_2_joint" coef='12.5' />
+    </fixed>
+  </tendon>
+  
+</mujocoinclude>

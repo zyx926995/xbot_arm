@@ -2,7 +2,7 @@ import os
 import sys
 import numpy as np
 from scipy.spatial.transform import Rotation
-from discoverse.task_base.xbot_arm_task_base import XbotArmTaskBase, XbotArmCfg
+from task_base.xbot_arm_task_base import XbotArmTaskBase, XbotArmCfg
 
 class XbotArmPickPlaceCfg(XbotArmCfg):
     def __init__(self):

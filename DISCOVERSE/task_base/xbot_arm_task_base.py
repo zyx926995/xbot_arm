@@ -6,7 +6,7 @@ import glfw
 import mujoco
 import numpy as np
 from scipy.spatial.transform import Rotation
-from discoverse.robots_env.xbot_arm_base import XbotArmBase, XbotArmCfg
+from robots_env.xbot_arm_base import XbotArmBase, XbotArmCfg
 import av
 
 

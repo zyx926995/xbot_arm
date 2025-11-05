@@ -1,0 +1,5 @@
+<mujocoinclude>
+  <asset>
+    <mesh name="arm_1_link" file="object/arm_1_link/arm_1_link.obj" />
+  </asset>
+</mujocoinclude>
