@@ -1,4 +1,10 @@
 <mujocoinclude>
+  <framepos name="arm_1_joint_site_pos" objtype="site" objname="arm_1_joint_site" />
+  <framequat name="arm_1_joint_site_quat" objtype="site" objname="arm_1_joint_site" />
+  <framelinvel name="arm_1_joint_site_linvel" objtype="site" objname="arm_1_joint_site" />
+  <frameangvel name="arm_1_joint_site_angvel" objtype="site" objname="arm_1_joint_site" />
+  <velocimeter name="arm_1_joint_site_vel" site="arm_1_joint_site" />
+
   <!-- 关节位置传感器 -->
   <jointpos name="joint1_pos" joint="arm_1_joint" />
   <jointpos name="joint2_pos" joint="arm_2_joint" />

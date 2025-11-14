@@ -6,7 +6,7 @@ import os
 import argparse
 import multiprocessing as mp
 
-from discoverse.robots import AirbotPlayIK
+from discoverse.robots.xbot_arm.xbot_arm_ik import XbotArmIK
 from discoverse import DISCOVERSE_ROOT_DIR
 from discoverse.robots_env.xbot_arm_base import XbotArmCfg
 from discoverse.utils import get_body_tmat, get_site_tmat, step_func, SimpleStateMachine
@@ -91,7 +91,7 @@ if __name__ == "__main__":
         mujoco.mj_saveModel(sim_node.mj_model, os.path.join(save_dir, os.path.basename(cfg.mjcf_file_path).replace(".xml", ".mjb")))
         copypy2(os.path.abspath(__file__), os.path.join(save_dir, os.path.basename(__file__)))
         
-    arm_ik = AirbotPlayIK()
+    arm_ik = XbotArmIK()
 
     trmat = Rotation.from_euler("xyz", [0., np.pi/2, 0.], degrees=False).as_matrix()
     tmat_armbase_2_world = np.linalg.inv(get_body_tmat(sim_node.mj_data, "arm_pose"))

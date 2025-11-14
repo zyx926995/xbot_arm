@@ -1,16 +1,19 @@
-<mujocoinclude>
-  <!-- 网格资源定义 -->
+<mujocoinclude>  
   <asset>
-    <mesh file="../../meshes/xbot_arm/base_link.obj" name="base_link_mesh" />
-    <mesh file="../../meshes/xbot_arm/arm_1_link.obj" name="arm_1_link_mesh"/>
-    <mesh file="../../meshes/xbot_arm/arm_2_link.obj" name="arm_2_link_mesh"/>
-    <mesh file="../../meshes/xbot_arm/arm_3_link.obj" name="arm_3_link_mesh"/>
-    <mesh file="../../meshes/xbot_arm/arm_4_link.obj" name="arm_4_link_mesh"/>
-    <mesh file="../../meshes/xbot_arm/arm_5_link.obj" name="arm_5_link_mesh"/>
-    <mesh file="../../meshes/xbot_arm/arm_6_link.obj" name="arm_6_link_mesh"/>
-    <mesh file="../../meshes/xbot_arm/gripper_1_link.obj" name="gripper_1_link_mesh"/>
-    <mesh file="../../meshes/xbot_arm/gripper_2_link.obj" name="gripper_2_link_mesh"/>
-    <mesh file="../../meshes/xbot_arm/gripper_center_link.obj" name="gripper_centor_mesh"/>
+      <material name="visualgeom" rgba="0.7 0.7 0.7 1" specular="0.3" shininess="0.1" />
+      <material name="LightGreen" rgba="0.5 0.8 0.5 1" specular="0.3" shininess="0.1" />
+      <material name="White" rgba="0.9 0.9 0.9 1" specular="0.4" shininess="0.1" />
+      <material name="collision_material" rgba="1.0 0.28 0.1 0.9" />
+      <mesh file="../../meshes/xbot_arm/base_link.obj" name="base_link_mesh" />
+      <mesh file="../../meshes/xbot_arm/arm_1_link.obj" name="arm_1_link_mesh"/>
+      <mesh file="../../meshes/xbot_arm/arm_2_link.obj" name="arm_2_link_mesh"/>
+      <mesh file="../../meshes/xbot_arm/arm_3_link.obj" name="arm_3_link_mesh"/>
+      <mesh file="../../meshes/xbot_arm/arm_4_link.obj" name="arm_4_link_mesh"/>
+      <mesh file="../../meshes/xbot_arm/arm_5_link.obj" name="arm_5_link_mesh"/>
+      <mesh file="../../meshes/xbot_arm/arm_6_link.obj" name="arm_6_link_mesh"/>
+      <mesh file="../../meshes/xbot_arm/gripper_1_link.obj" name="gripper_1_link_mesh"/>
+      <mesh file="../../meshes/xbot_arm/gripper_2_link.obj" name="gripper_2_link_mesh"/>
+      <mesh file="../../meshes/xbot_arm/gripper_center_link.obj" name="gripper_centor_mesh"/>
   </asset>
-  
+
 </mujocoinclude>

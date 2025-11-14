@@ -2,8 +2,6 @@
 
   <!-- ================== 基础设置 ================== -->
   <include file="../scene.xml"/>
-  <include file="../xbot_arm/xbot_arm_options.xml"/>
-  <include file="../xbot_arm/xbot_arm_dependencies.xml"/>
 
   <compiler meshdir="../../meshes/" texturedir="../../meshes/"/>
 
@@ -60,15 +58,5 @@
     <!-- 保持夹爪同步约束 -->
     <joint joint1="gripper_1_joint" joint2="gripper_2_joint" polycoef="0 -1 0 0 0"/>
   </equality>
-
-  <!-- ================== 控制器 ================== -->
-  <actuator>
-    <include file="../xbot_arm/xbot_arm_control.xml"/>
-  </actuator>
-
-  <!-- ================== 传感器 ================== -->
-  <sensor>
-    <include file="../xbot_arm/xbot_arm_sensor.xml"/>
-  </sensor>
 
 </mujoco>

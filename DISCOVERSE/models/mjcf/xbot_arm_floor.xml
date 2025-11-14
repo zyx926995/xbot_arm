@@ -1,11 +1,9 @@
 <mujoco model="xbot_arm">
-  <!-- 包含基本场景 -->
+
   <include file="scene.xml" />
-  
-  <!-- 包含机器人配置 -->
-  <include file="xbot_arm/xbot_arm_options.xml" />
+  <include file="xbot_arm/xbot_arm_options.xml"/>
   <include file="xbot_arm/xbot_arm_dependencies.xml" />
-  
+
   <!-- 世界体 -->
   <worldbody>
     <!-- 机械臂 -->
@@ -23,17 +21,17 @@
     </body>
   </worldbody>
   
-  <!-- 包含执行器和传感器 -->
   <actuator>
-    <include file="xbot_arm/xbot_arm_control.xml" />
+    <include file="xbot_arm/xbot_arm_control.xml"/>
   </actuator>
 
   <sensor>
-    <include file="xbot_arm/xbot_arm_sensor.xml" />
+    <include file="xbot_arm/xbot_arm_sensor.xml"/>
   </sensor>
-  
+
   <!-- 初始关节位置 -->
   <keyframe>
-    <key name="home" qpos="0 -1.18 0.000 -2.18 0.000 3.316 0.000 0.000" qvel="0 0 0 0 0 0 0 0"/>
+    <!-- <key name="home" qpos="0 -1.18 0.000 -2.18 0.000 3.316 0.000 0.000" qvel="0 0 0 0 0 0 0 0"/> -->
+    <key name="home" qpos="0 0 0 0 0 0 0 0" qvel="0 0 0 0 0 0 0 0"/>
   </keyframe>
 </mujoco>
