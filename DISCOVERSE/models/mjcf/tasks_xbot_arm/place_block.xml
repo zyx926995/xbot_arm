@@ -52,6 +52,14 @@
 
   </worldbody>
 
+  <actuator>
+    <include file="../xbot_arm/xbot_arm_control.xml"/>
+  </actuator>
+
+  <sensor>
+    <include file="../xbot_arm/xbot_arm_sensor.xml"/>
+  </sensor>
+
   <!-- ================== weld约束 + 夹爪约束 ================== -->
   <equality>
     <!-- 将 base_link 焊接到世界坐标 -->

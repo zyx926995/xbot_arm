@@ -6,7 +6,7 @@ import os
 import argparse
 import multiprocessing as mp
 
-# from discoverse.robots.xbot_arm.xbot_arm_ik import XbotArmIK
+from discoverse.robots.xbot_arm.xbot_arm_ik import XbotArmIK
 from discoverse import DISCOVERSE_ROOT_DIR
 from discoverse.robots_env.xbot_arm_base import XbotArmCfg
 from discoverse.utils import get_body_tmat, get_site_tmat, step_func, SimpleStateMachine

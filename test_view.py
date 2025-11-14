@@ -3,7 +3,6 @@ import mujoco
 import mujoco.viewer
 
 model = mujoco.MjModel.from_xml_path("/data/zhangyx23Files/program/real2sim2real/DISCOVERSE/models/mjcf/tasks_xbot_arm/place_block.xml")
-# model = mujoco.MjModel.from_xml_path("/data/zhangyx23Files/program/real2sim2real/DISCOVERSE/models/mjcf/tasks_airbot_play/place_block.xml")
 data = mujoco.MjData(model)
 
 print(data.qpos[:10])
@@ -28,5 +27,3 @@ mujoco.mj_forward(model, data)
 # print(model.jnt_range[:model.njnt])
 
 mujoco.viewer.launch(model, data)
-
-

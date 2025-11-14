@@ -33,9 +33,9 @@
   <jointactuatorfrc name="gripper_torque" joint="gripper_1_joint" />
 
   <!-- 末端执行器传感器 -->
-  <framepos name="endpoint_pos" objtype="site" objname="endpoint" reftype="body" refname="base_link"/>
+  <!-- <framepos name="endpoint_pos" objtype="site" objname="endpoint" reftype="body" refname="base_link"/>
   <framequat name="endpoint_quat" objtype="site" objname="endpoint" reftype="body" refname="base_link"/>
   <framelinvel name="endpoint_vel" objtype="site" objname="endpoint" reftype="body" refname="base_link"/>
   <gyro name="endpoint_gyro" site="endpoint"/>
-  <accelerometer name="endpoint_acc" site="endpoint" />
+  <accelerometer name="endpoint_acc" site="endpoint" /> -->
 </mujocoinclude>

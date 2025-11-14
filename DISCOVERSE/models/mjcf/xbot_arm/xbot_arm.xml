@@ -1,7 +1,7 @@
 <mujocoinclude>
     <body name="base_link" pos="0.00000000 0.00000000 0.00000000" quat="1 0 0 0">
       <geom name="base_link_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="base_link_mesh"  class="collision"/>
-      <geom name="base_link_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="LightGrey" type="mesh" mesh="base_link_mesh" class="visual" />
+      <geom name="base_link_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="visualgeom" type="mesh" mesh="base_link_mesh" class="visual" />
       <body name="arm_1_link" pos="0 0 0.14" quat="-3.673205103346574e-06 0.9999999999932537 0.0 -0.0">
         <joint name="arm_1_joint" type="hinge" ref="0.0" range="-2.094 2.094" axis="0 0 1" damping="2.0"/>
         <site name="arm_1_joint_site" pos="0 0 0" quat="1 0 0 0" />
@@ -38,6 +38,7 @@
                   <inertial pos="0.00023077781229322 0.0477776544969339 -0.000274578550932736" quat="1.0 0.0 0.0 0.0" mass="0.0663534128705839" diaginertia="4.46094691893757e-05 3.14288652751225e-05 5.02053835003699e-05" />
                   <geom name="arm_6_link_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="arm_6_link_mesh" class="collision" />
                   <geom name="arm_6_link_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="" type="mesh" mesh="arm_6_link_mesh" class="visual" />
+                  <!-- <site name="endpoint" pos='0 0 0' euler="0 -1.5708 0" size='0.001' type='sphere'/> -->
                   <body name="gripper_1_link" pos="-0.0001 0.06175 0.0115" quat="0.4999981633974483 0.49999999999662686 0.5000018366025516 0.49999999999662686">
                     <joint name="gripper_1_joint" type="hinge" ref="0.0" range="0 0.698" axis="0 0 1" damping="2.0"/>
                     <site name="gripper_1_joint_site" pos="0 0 0" quat="1 0 0 0" />
