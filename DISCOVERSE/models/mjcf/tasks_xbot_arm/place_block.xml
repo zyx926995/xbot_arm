@@ -2,6 +2,8 @@
 
   <!-- ================== 基础设置 ================== -->
   <include file="../scene.xml"/>
+  <include file="../xbot_arm/xbot_arm_options.xml"/>
+  <include file="../xbot_arm/xbot_arm_dependencies.xml" />
 
   <compiler meshdir="../../meshes/" texturedir="../../meshes/"/>
 
